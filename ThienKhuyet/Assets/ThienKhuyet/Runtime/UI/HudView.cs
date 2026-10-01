@@ -390,7 +390,7 @@ namespace ThienKhuyet.UI
                 skillCd[i].fillAmount = combat != null ? combat.CooldownFraction(sk) : 0f;
                 skillFrame[i].color = new Color(0.04f, 0.05f, 0.07f, 0.88f);
             }
-            string healId = Game.Manager != null ? Game.Manager.QuickHealItemId() : null;
+            string healId = Game.Manager != null ? Game.Manager.QuickHealItemId : null;
             ItemDef heal = ContentDB.Item(healId);
             healIcon.enabled = heal != null;
             if (heal != null) healIcon.sprite = ItemIcons.Get(heal);

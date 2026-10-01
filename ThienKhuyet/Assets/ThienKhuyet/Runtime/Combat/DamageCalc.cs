@@ -7,6 +7,7 @@ namespace ThienKhuyet.Combat
     public enum Team { Neutral = 0, Player = 1, Enemy = 2 }
 
     /// <summary>Everything the receiver needs to resolve one hit.</summary>
+    [Serializable]
     public struct DamageInfo
     {
         public float power;            // already includes attack stat and motion multiplier

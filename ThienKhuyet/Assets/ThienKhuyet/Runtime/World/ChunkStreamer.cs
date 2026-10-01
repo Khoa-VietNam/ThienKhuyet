@@ -52,7 +52,6 @@ namespace ThienKhuyet.World
         SphereCollider[] rockCols;
         Transform focus;
         float updateTimer, batchTimer, colliderTimer, orphanTimer;
-        int loadedThisFrame;
         Vector3 lastBatchPos;
         bool forceRebuild = true;
 
@@ -146,7 +145,6 @@ namespace ThienKhuyet.World
             batchTimer -= dt;
             colliderTimer -= dt;
             orphanTimer -= dt;
-            loadedThisFrame = 0;
 
             if (updateTimer <= 0f)
             {

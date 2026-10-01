@@ -43,7 +43,7 @@ namespace ThienKhuyet.Core
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void BootstrapAfterSceneLoad()
         {
-            if (FindFirstObjectByType<GameManager>() != null) return;
+            if (FindAnyObjectByType<GameManager>() != null) return;
             new GameObject("ThienKhuyetRuntime").AddComponent<GameManager>();
         }
 
@@ -278,9 +278,9 @@ namespace ThienKhuyet.Core
                 Array.Clear(Game.World.Fog, 0, Game.World.Fog.Length);
                 Game.World.FogDirty = true;
                 if (Game.World.Env != null) Game.World.Env.SetTime(7.5f);
-                Container[] containers = FindObjectsByType<Container>(FindObjectsSortMode.None);
+                Container[] containers = FindObjectsByType<Container>();
                 for (int i = 0; i < containers.Length; i++) containers[i].ResetForNewGame();
-                Gatherable[] nodes = FindObjectsByType<Gatherable>(FindObjectsSortMode.None);
+                Gatherable[] nodes = FindObjectsByType<Gatherable>();
                 for (int i = 0; i < nodes.Length; i++) nodes[i].ResetForNewGame();
                 if (Game.World.Streamer != null) Game.World.Streamer.RespawnEnemies();
             }

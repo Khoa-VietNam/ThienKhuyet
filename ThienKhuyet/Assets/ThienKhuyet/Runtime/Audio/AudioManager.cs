@@ -322,7 +322,7 @@ namespace ThienKhuyet.Audio
         {
             if (muffle == null)
             {
-                var listener = FindFirstObjectByType<AudioListener>();
+                var listener = FindAnyObjectByType<AudioListener>();
                 if (listener == null) return;
                 muffle = listener.GetComponent<AudioLowPassFilter>();
                 if (muffle == null) muffle = listener.gameObject.AddComponent<AudioLowPassFilter>();

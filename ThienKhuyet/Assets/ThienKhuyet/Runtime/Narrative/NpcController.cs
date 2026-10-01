@@ -31,7 +31,7 @@ namespace ThienKhuyet.Narrative
             return null;
         }
 
-        public NpcDef def;
+        [System.NonSerialized] public NpcDef def;
         public HumanoidRig rig;
         public HumanoidAnimator anim;
         public bool busy;                 // in dialogue or cutscene

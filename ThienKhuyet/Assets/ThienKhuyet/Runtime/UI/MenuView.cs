@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ThienKhuyet.Combat;
 using ThienKhuyet.Core;
 using ThienKhuyet.Data;
 using ThienKhuyet.Gfx;
@@ -18,6 +19,7 @@ namespace ThienKhuyet.UI
     public sealed class MenuView
     {
         public const int TabInventory = 0, TabCharacter = 1, TabCultivation = 2, TabSkills = 3, TabQuests = 4, TabMap = 5, TabSettings = 6, TabSave = 7;
+        public const int TabPause = TabInventory;
         static readonly string[] TabKeys = { "ui.inventory", "ui.character", "ui.cultivation", "ui.skills", "ui.quests", "ui.map", "ui.settings", "ui.saveload" };
 
         readonly RectTransform root, content, tabColumn;
@@ -731,7 +733,7 @@ namespace ThienKhuyet.UI
             Text ql = UIKit.Txt(panel, "QL", Loc.T("opt.quality"), 26, UIKit.Paper, TextAnchor.MiddleLeft);
             UIKit.Place(ql.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(34f, y), new Vector2(420f, 40f));
             Button qb = null;
-            qb = UIKit.Btn(panel, "Q", Loc.T("quality." + (int)s.quality), () => { s.quality = (QualityLevel)(((int)s.quality + 1) % 3); UIKit.SetLabel(qb, Loc.T("quality." + (int)s.quality)); s.Apply(); s.Save(); }, 24);
+            qb = UIKit.Btn(panel, "Q", Loc.T("quality." + (int)s.quality), () => { s.quality = (ThienKhuyet.Core.QualityLevel)(((int)s.quality + 1) % 3); UIKit.SetLabel(qb, Loc.T("quality." + (int)s.quality)); s.Apply(); s.Save(); }, 24);
             UIKit.Place((RectTransform)qb.transform, new Vector2(0f, 1f), new Vector2(0f, 1f), new Vector2(470f, y), new Vector2(240f, 42f));
             y -= 54f;
             Text ll = UIKit.Txt(panel, "LL", Loc.T("opt.language"), 26, UIKit.Paper, TextAnchor.MiddleLeft);

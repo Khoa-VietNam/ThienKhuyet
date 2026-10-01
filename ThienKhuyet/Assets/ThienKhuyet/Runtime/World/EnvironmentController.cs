@@ -47,7 +47,7 @@ namespace ThienKhuyet.World
         {
             // reuse the scene's directional light if there is one, otherwise create it
             Light existing = null;
-            foreach (Light l in FindObjectsByType<Light>(FindObjectsSortMode.None))
+            foreach (Light l in FindObjectsByType<Light>())
                 if (l.type == LightType.Directional) { existing = l; break; }
             if (existing != null) sun = existing;
             else sun = new GameObject("Sun").AddComponent<Light>();

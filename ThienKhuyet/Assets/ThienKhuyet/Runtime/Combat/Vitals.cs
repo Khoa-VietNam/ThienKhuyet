@@ -130,7 +130,7 @@ namespace ThienKhuyet.Combat
         }
 
         public Team team = Team.Enemy;
-        public StatBlock stats = new StatBlock();
+        [NonSerialized] public StatBlock stats = new StatBlock();
         public int realm;
         public float hp = 100f, stamina = 100f, qi = 50f, poise = 40f;
         public bool invulnerable;
