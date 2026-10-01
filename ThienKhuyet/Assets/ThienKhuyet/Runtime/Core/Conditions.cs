@@ -56,12 +56,18 @@ namespace ThienKhuyet.Core
         public static bool Eval(string expr, IGameQuery q)
         {
             if (string.IsNullOrWhiteSpace(expr)) return true;
-            string[] clauses = expr.Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
-            for (int i = 0; i < clauses.Length; i++)
+            string[] alternatives = expr.Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+            for (int alternative = 0; alternative < alternatives.Length; alternative++)
             {
-                if (!EvalClause(clauses[i].Trim(), q)) return false;
+                string[] clauses = alternatives[alternative].Split(new[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
+                bool all = true;
+                for (int i = 0; i < clauses.Length; i++)
+                {
+                    if (!EvalClause(clauses[i].Trim(), q)) { all = false; break; }
+                }
+                if (all) return true;
             }
-            return true;
+            return false;
         }
 
         static bool EvalClause(string c, IGameQuery q)

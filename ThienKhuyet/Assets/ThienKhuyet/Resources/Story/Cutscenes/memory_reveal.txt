@@ -1,0 +1,15 @@
+# The hidden memory road repeats the opening image with a different voice.
+cutscene memory_reveal title=cut.memory.title duration=9 stage=memory start=0,0,0 yaw=0 replayable=no music=memory
+bars at=0 on=yes
+env at=0 fog=0.7 sun=0.65 ambient=0.75 color=blue weight=0.55
+dof at=0 focus=9 aperture=4.5 focal=55 sat=0.78 exposure=-0.1 vignette=0.28 chroma=0.01 grain=0.12 on=yes
+fade at=0 dur=0.4 alpha=1 color=black
+shot at=0 dur=1.8 pos=-10,7,-10 look=0,1,4 fov=46
+subtitle at=0.7 dur=3 who=ui.narrator text=cut.memory.1 color=jade size=1
+vfx at=2 id=qi_gather pos=0,1,8 scale=2
+shot at=3 dur=1.8 pos=9,3,11 look=0,1,8 fov=42
+subtitle at=3.5 dur=3.2 who=npc.self_echo.name text=cut.memory.2 color=white size=1.05
+sfx at=6.5 id=realm_up volume=0.45 pitch=0.8
+subtitle at=6.7 dur=1.8 who=ui.narrator text=cut.memory.3 color=gold size=0.95
+fade at=8 dur=0.8 alpha=0 color=black
+end at=9

@@ -241,12 +241,12 @@ namespace ThienKhuyet.Narrative
 
         void OnKill(EnemyKilledEvent e)
         {
-            Each((p, i, o) => { if (o.type == ObjectiveType.Kill && (string.IsNullOrEmpty(o.target) || o.target == e.enemyId)) Bump(p, i); });
+            Refresh();
         }
 
         void OnItem(ItemGainedEvent e)
         {
-            Each((p, i, o) => { });
+            Refresh();
         }
 
         void OnPoi(PoiDiscoveredEvent e)
@@ -283,13 +283,13 @@ namespace ThienKhuyet.Narrative
 
         void OnRealm(RealmChangedEvent e)
         {
-            Each((p, i, o) => { });
+            Refresh();
             StartAutoQuests();
         }
 
         void OnFlag(FlagChangedEvent e)
         {
-            Each((p, i, o) => { });
+            Refresh();
             StartAutoQuests();
         }
 
@@ -317,6 +317,16 @@ namespace ThienKhuyet.Narrative
                     {
                         case ObjectiveType.Collect:
                             count = Mathf.Min(o.count, fx.ItemCount(o.target));
+                            done = count >= o.count;
+                            break;
+                        case ObjectiveType.Kill:
+                            if (Game.Session != null && !string.IsNullOrEmpty(o.target) && Game.Session.enemyKillCounts.TryGetValue(o.target, out int totalKills))
+                                count = Mathf.Max(count, Mathf.Min(o.count, totalKills));
+                            done = count >= o.count;
+                            break;
+                        case ObjectiveType.Reach:
+                            if (Game.Session != null && !string.IsNullOrEmpty(o.target) && Game.Session.discoveredPois.Contains(o.target))
+                                count = Mathf.Max(count, o.count);
                             done = count >= o.count;
                             break;
                         case ObjectiveType.Flag:
@@ -370,7 +380,8 @@ namespace ThienKhuyet.Narrative
                 {
                     if (!defs.TryGetValue(list[i].id, out QuestDef d)) continue;
                     var p = new QuestProgress { def = d, status = list[i].status, counts = new int[d.objectives.Count], complete = new bool[d.objectives.Count] };
-                    for (int k = 0; k < p.counts.Length && k < list[i].counts.Length; k++) p.counts[k] = list[i].counts[k];
+                    int[] savedCounts = list[i].counts ?? new int[0];
+                    for (int k = 0; k < p.counts.Length && k < savedCounts.Length; k++) p.counts[k] = Mathf.Max(0, savedCounts[k]);
                     for (int k = 0; k < p.counts.Length; k++) p.complete[k] = p.counts[k] >= d.objectives[k].count;
                     states[d.id] = p;
                     order.Add(d.id);

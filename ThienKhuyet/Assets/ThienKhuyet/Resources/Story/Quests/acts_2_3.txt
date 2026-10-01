@@ -1,0 +1,16 @@
+# Act II: The broken stele and the lost memory
+quest m2_ledger title=quest.m2_ledger.title desc=quest.m2_ledger.desc type=main act=2 auto=yes requires=act>=2 zone=vong_nguyet
+  obj reach poi=ruin text=quest.m2_ledger.o1
+  obj kill enemy=stone_guardian n=1 text=quest.m2_ledger.o2
+  obj realm n=2 text=quest.m2_ledger.o3
+  obj talk npc=elder_vu dialogue=elder_ruin_hint text=quest.m2_ledger.o4
+  reward exp=850 stones=500 item=golden_core_elixir*1,manual_sword_wave*1
+  on_done "flag+:act3_unlocked;act:3;cut:memory_reveal"
+
+# Act III: Follow the fracture to the heart of the valley
+quest m3_trial title=quest.m3_trial.title desc=quest.m3_trial.desc type=main act=3 auto=yes requires=act>=3 zone=thien_khuyet
+  obj kill enemy=alpha_wolf n=1 text=quest.m3_trial.o1
+  obj realm n=3 text=quest.m3_trial.o2
+  obj reach poi=heart text=quest.m3_trial.o3
+  reward exp=1400 stones=600 item=nascent_soul_fruit*1,ruin_blade*1
+  on_done "flag+:final_choice_unlocked;act:4;toast:toast.final_path"

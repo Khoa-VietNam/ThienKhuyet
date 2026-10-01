@@ -86,9 +86,11 @@ namespace ThienKhuyet.Core
         {
             Clear();
             if (d == null) return;
-            for (int i = 0; i < d.flags.Count; i++) flags.Add(d.flags[i]);
-            for (int i = 0; i < d.intKeys.Count && i < d.intValues.Count; i++) ints[d.intKeys[i]] = d.intValues[i];
-            for (int i = 0; i < d.strKeys.Count && i < d.strValues.Count; i++) strs[d.strKeys[i]] = d.strValues[i];
+            if (d.flags != null) for (int i = 0; i < d.flags.Count; i++) if (!string.IsNullOrEmpty(d.flags[i])) flags.Add(d.flags[i]);
+            if (d.intKeys != null && d.intValues != null)
+                for (int i = 0; i < d.intKeys.Count && i < d.intValues.Count; i++) if (!string.IsNullOrEmpty(d.intKeys[i])) ints[d.intKeys[i]] = d.intValues[i];
+            if (d.strKeys != null && d.strValues != null)
+                for (int i = 0; i < d.strKeys.Count && i < d.strValues.Count; i++) if (!string.IsNullOrEmpty(d.strKeys[i])) strs[d.strKeys[i]] = d.strValues[i];
         }
     }
 }

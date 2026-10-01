@@ -208,6 +208,14 @@ namespace ThienKhuyet.World
             fx = Vfx.Play("loot_sparkle", transform.position + Vector3.up * 0.5f, Quaternion.identity, 0.9f);
         }
 
+        public void ResetForNewGame()
+        {
+            depleted = false;
+            checkTimer = 0f;
+            if (visual != null) visual.SetActive(true);
+            if (fx == null) fx = Vfx.Play("loot_sparkle", transform.position + Vector3.up * 0.5f, Quaternion.identity, 0.9f);
+        }
+
         void Update()
         {
             if (!depleted) return;
@@ -303,6 +311,13 @@ namespace ThienKhuyet.World
             lb.Pop();
             lidGo.AddComponent<MeshFilter>().sharedMesh = lb.ToMesh("chest_lid", true);
             lidGo.AddComponent<MeshRenderer>().sharedMaterial = assets.matDarkWood;
+        }
+
+        public void ResetForNewGame()
+        {
+            opened = false;
+            openT = 1f;
+            if (lid != null) lid.localRotation = Quaternion.identity;
         }
 
         void Update()

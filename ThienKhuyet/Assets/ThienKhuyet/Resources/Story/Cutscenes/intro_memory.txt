@@ -1,0 +1,12 @@
+# A short, skippable opening memory in the procedural moonlit stage.
+cutscene intro_memory title=cut.intro.title duration=8 stage=memory start=0,0,0 yaw=0 replayable=no music=memory
+bars at=0 on=yes
+fade at=0 dur=0.05 alpha=1 color=black
+shot at=0 dur=1.4 pos=0,6,-14 look=0,1,3 fov=48
+subtitle at=0.9 dur=3 who=ui.narrator text=cut.intro.1 color=jade size=1.05
+vfx at=2.2 id=qi_gather pos=0,1,8 scale=1.6
+shake at=3.1 amp=0.06 dur=0.4
+shot at=3.6 dur=1.8 pos=8,4,10 look=0,1,4 fov=52
+subtitle at=4 dur=2.8 who=ui.narrator text=cut.intro.2 color=white size=1
+fade at=7 dur=0.7 alpha=0 color=black
+end at=8

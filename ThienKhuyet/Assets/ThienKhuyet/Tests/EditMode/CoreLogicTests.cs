@@ -173,6 +173,17 @@ namespace ThienKhuyet.Tests
         }
 
         [Test]
+        public void SupportsOrAlternativesWithAndPrecedence()
+        {
+            var g = new FakeGame();
+            g.Flags.Set("first");
+            g.Realm = 1;
+            Assert.IsTrue(Cond.Eval("flag:first|flag:second&realm>=1", g));
+            Assert.IsFalse(Cond.Eval("flag:missing|flag:second&realm>=1", g));
+            Assert.IsTrue(Cond.Eval("flag:missing&realm>=1|realm>=1", g));
+        }
+
+        [Test]
         public void FlagNamesStartingWithKeywordsAreFlags()
         {
             var g = new FakeGame();

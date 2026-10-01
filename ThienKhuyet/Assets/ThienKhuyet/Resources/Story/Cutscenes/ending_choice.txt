@@ -1,0 +1,11 @@
+# Final choice: this sequence deliberately cannot be skipped before choosing.
+cutscene ending_choice title=cut.memory.title duration=12 stage=memory start=0,0,0 yaw=0 replayable=no music=memory
+bars at=0 on=yes
+fade at=0 dur=0.2 alpha=1 color=black
+shot at=0 dur=2 pos=-12,8,-16 look=0,1,5 fov=44
+subtitle at=1 dur=3 who=ui.narrator text=cut.memory.3 color=jade size=1
+vfx at=2.8 id=qi_gather pos=0,1,8 scale=2.2
+shot at=3 dur=1.5 pos=12,4,14 look=0,1,8 fov=48
+choice at=4 text=cut.ending.prompt key=ending options=ending.return.option|ending.stay.option
+fade at=5 dur=0.8 alpha=0 color=black
+end at=6

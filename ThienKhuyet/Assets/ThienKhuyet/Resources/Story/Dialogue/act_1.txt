@@ -1,0 +1,93 @@
+# First conversations and the chosen cultivation path
+dialogue elder_first
+  node start speaker=elder_vu text=dlg.elder.first.1 expr=thoughtful do="flag+:elder_intro_done"
+    choice text=dlg.elder.first.c1 goto=answer
+    choice text=dlg.elder.first.c2 goto=answer
+  node answer speaker=elder_vu text=dlg.elder.first.2 expr=nod next=end
+
+dialogue elder_root_test
+  node start speaker=elder_vu text=dlg.elder.test.1 expr=thoughtful
+    choice text=dlg.elder.test.wu goto=chosen do="str:path=wu;flag+:path_chosen;flag+:root_test_done"
+    choice text=dlg.elder.test.jian goto=chosen do="str:path=jian;flag+:path_chosen;flag+:root_test_done"
+    choice text=dlg.elder.test.fa goto=chosen do="str:path=fa;flag+:path_chosen;flag+:root_test_done"
+    choice text=dlg.elder.test.hybrid goto=chosen do="str:path=hybrid;flag+:path_chosen;flag+:root_test_done"
+  node chosen speaker=elder_vu text=dlg.elder.test.done expr=nod next=end
+
+dialogue elder_after_test
+  node start speaker=elder_vu text=dlg.elder.after expr=nod do="flag+:elder_after_test" next=end
+
+dialogue elder_ruin_hint
+  node start speaker=elder_vu text=dlg.elder.ruin_hint expr=concerned do="flag+:elder_ruin_hint" next=end
+
+dialogue elder_idle
+  node start speaker=elder_vu text=dlg.elder.idle expr=thoughtful next=end
+
+dialogue hunter_first
+  node start speaker=hunter_luc text=dlg.hunter.first.1 expr=serious
+    choice text=dlg.hunter.first.c1 goto=end
+
+dialogue hunter_training
+  node start speaker=hunter_luc text=dlg.hunter.training expr=point next=end
+
+dialogue hunter_wolves
+  node start speaker=hunter_luc text=dlg.hunter.wolves expr=nod next=end
+
+dialogue hunter_bandits
+  node start speaker=hunter_luc text=dlg.hunter.bandits expr=concerned next=end
+
+dialogue hunter_tempering
+  node start speaker=hunter_luc text=dlg.hunter.tempering expr=thoughtful do="flag+:hunter_body_tempering" next=end
+
+dialogue hunter_idle
+  node start speaker=hunter_luc text=dlg.hunter.idle expr=nod next=end
+
+# Optional village errand. Items are checked before the return conversation completes.
+dialogue healer_first
+  node start speaker=healer_lan text=dlg.healer.first.1 expr=concerned do="flag+:healer_met"
+    choice text=dlg.healer.first.c1 goto=end
+
+dialogue healer_offer
+  node start speaker=healer_lan text=dlg.healer.offer expr=thoughtful
+    choice text=dlg.healer.accept goto=accepted do="quest.start:m1_paste;flag+:healer_offer_done"
+    choice text=dlg.healer.later goto=leave
+  node accepted speaker=healer_lan text=dlg.healer.accepted expr=smile next=end
+  node leave speaker=healer_lan text=dlg.healer.later_reply next=end
+
+dialogue healer_paste
+  node start speaker=healer_lan text=dlg.healer.need expr=concerned next=end
+
+dialogue healer_delivery
+  node start speaker=healer_lan text=dlg.healer.paste expr=smile do="take:herb_basic*3;flag+:herbs_delivered" next=end
+
+dialogue healer_idle
+  node start speaker=healer_lan text=dlg.healer.idle expr=smile next=end
+
+# Small, repeatable spirit-stone shop; choices are disabled when the player cannot afford them.
+dialogue merchant_shop
+  node start speaker=merchant_trinh text=dlg.merchant.1 expr=smile
+    choice text=dlg.merchant.buy_paste goto=receipt_paste if="item:spirit_stone>=8" do="take:spirit_stone*8;give:healing_paste*1"
+    choice text=dlg.merchant.buy_pill goto=receipt_pill if="item:spirit_stone>=18" do="take:spirit_stone*18;give:qi_pill_low*1"
+    choice text=dlg.merchant.leave goto=end
+  node receipt_paste speaker=merchant_trinh text=dlg.merchant.receipt_paste expr=smile next=end
+  node receipt_pill speaker=merchant_trinh text=dlg.merchant.receipt_pill expr=smile next=end
+
+dialogue tam_first
+  node start speaker=villager_tam text=dlg.tam.1 expr=surprised next=end
+
+dialogue tam_idle
+  node start speaker=villager_tam text=dlg.tam.idle expr=nod next=end
+
+dialogue child_chat
+  node start speaker=child_bao text=dlg.child.1 expr=excited next=end
+
+dialogue hoa_chat
+  node start speaker=villager_hoa text=dlg.hoa.1 expr=thoughtful next=end
+
+dialogue stranger_warning
+  node start speaker=stranger text=dlg.stranger.1 expr=stern next=end
+
+dialogue echo_memory
+  node start speaker=self_echo text=dlg.echo.1 expr=thoughtful next=end
+
+dialogue ling_qingyun
+  node start speaker=ling_qingyun text=dlg.ling.1 expr=serious next=end

@@ -78,10 +78,10 @@ namespace ThienKhuyet.Narrative
                 look = new CharacterAppearance { outfit = OutfitStyle.Robe, hairStyle = HairStyle.Topknot, hair = new Color(0.86f, 0.86f, 0.86f), skin = new Color(0.78f, 0.62f, 0.5f), primary = new Color(0.78f, 0.82f, 0.76f), secondary = new Color(0.2f, 0.38f, 0.36f), accent = new Color(0.8f, 0.65f, 0.3f), pants = new Color(0.3f, 0.34f, 0.34f), accessories = Accessory.Beard, height = 0.97f },
                 hasWeapon = true, weapon = WeaponFamily.Staff, weaponColor = new Color(0.4f, 0.3f, 0.2f)
             }.Rule("flag:root_test_done&!flag:elder_after_test", "elder_after_test")
-             .Rule("quest:m1_thanha=active|quest:m1_thanha=done&!flag:root_test_done", "elder_root_test")
+             .Rule("quest:m1_thanha=done&!flag:root_test_done", "elder_root_test")
              .Rule("flag:path_chosen&!flag:elder_ruin_hint", "elder_ruin_hint")
-             .Rule("flag:root_test_done", "elder_idle")
-             .Rule("", "elder_first"));
+             .Rule("!flag:elder_intro_done", "elder_first")
+             .Rule("", "elder_idle"));
 
             Add(new NpcDef
             {
@@ -90,6 +90,7 @@ namespace ThienKhuyet.Narrative
                 hasWeapon = true, weapon = WeaponFamily.Spear, weaponColor = new Color(0.75f, 0.78f, 0.82f), gestures = new[] { "gesture_b", "point" }
             }.Rule("quest:m1_train=active", "hunter_training")
              .Rule("quest:m1_wolves=active", "hunter_wolves")
+             .Rule("quest:m1_bandits=active", "hunter_bandits")
              .Rule("flag:trained&!flag:hunter_body_tempering", "hunter_tempering")
              .Rule("flag:hunter_body_tempering", "hunter_idle")
              .Rule("", "hunter_first"));
@@ -98,7 +99,10 @@ namespace ThienKhuyet.Narrative
             {
                 id = "healer_lan", faction = "village",
                 look = new CharacterAppearance { outfit = OutfitStyle.Robe, hairStyle = HairStyle.Long, hair = new Color(0.06f, 0.05f, 0.06f), skin = new Color(0.88f, 0.72f, 0.62f), primary = new Color(0.58f, 0.78f, 0.58f), secondary = new Color(0.95f, 0.95f, 0.88f), accent = new Color(0.9f, 0.78f, 0.45f), pants = new Color(0.85f, 0.85f, 0.8f), height = 0.93f, bulk = 0.92f }
-            }.Rule("quest:m1_paste=active", "healer_paste")
+            }.Rule("quest:m1_paste=active&item:herb_basic>=3", "healer_delivery")
+             .Rule("quest:m1_paste=active", "healer_paste")
+             .Rule("flag:healer_met&quest:m1_paste=none&!flag:healer_offer_done", "healer_offer")
+             .Rule("flag:healer_paste_delivered", "healer_idle")
              .Rule("flag:healer_met", "healer_idle")
              .Rule("", "healer_first"));
 

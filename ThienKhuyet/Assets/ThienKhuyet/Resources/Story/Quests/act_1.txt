@@ -1,0 +1,37 @@
+# Act I: Awakening in the Western Valley
+quest m1_wake title=quest.m1_wake.title desc=quest.m1_wake.desc type=main act=1 auto=yes zone=mi_lam next=m1_thanha
+  obj reach poi=spawn text=quest.m1_wake.o1
+  reward exp=30 stones=5
+
+quest m1_thanha title=quest.m1_thanha.title desc=quest.m1_thanha.desc type=main act=1 giver=elder_vu zone=thanh_ha
+  obj talk npc=elder_vu dialogue=elder_first text=quest.m1_thanha.o1
+  reward exp=25 stones=10
+  on_done "flag+:elder_met"
+
+quest m1_train title=quest.m1_train.title desc=quest.m1_train.desc type=main act=1 auto=yes requires=flag:path_chosen zone=thanh_ha next=m1_wolves
+  obj action name=hit_dummy n=3 text=quest.m1_train.o1
+  reward exp=80 stones=20 item=qi_pill_low*1
+  on_done "flag+:trained"
+
+quest m1_wolves title=quest.m1_wolves.title desc=quest.m1_wolves.desc type=main act=1 zone=mi_lam next=m1_bandits
+  obj kill enemy=wolf n=3 text=quest.m1_wolves.o1
+  obj talk npc=hunter_luc dialogue=hunter_wolves text=quest.m1_wolves.o2
+  reward exp=120 stones=25 item=healing_paste*1
+  on_done "flag+:wolves_warned"
+
+quest m1_bandits title=quest.m1_bandits.title desc=quest.m1_bandits.desc type=main act=1 zone=hac_phong
+  obj reach poi=bandit_camp text=quest.m1_bandits.o1
+  obj talk npc=hunter_luc dialogue=hunter_bandits text=quest.m1_bandits.o2
+  reward exp=300 stones=100 item=foundation_pill*1,beast_core_low*3,qi_pill_low*3
+  on_done "flag+:blackwind_exposed"
+
+quest m1_paste title=quest.m1_paste.title desc=quest.m1_paste.desc type=side act=1 giver=healer_lan zone=thanh_ha
+  obj flag name=herbs_delivered text=quest.m1_paste.o1
+  obj talk npc=healer_lan dialogue=healer_delivery text=quest.m1_paste.o2
+  reward exp=55 stones=15 item=body_paste*1
+  on_done "flag+:healer_paste_delivered"
+
+quest m1_altar title=quest.m1_altar.title desc=quest.m1_altar.desc type=main act=1 auto=yes requires=quest:m1_bandits=done&realm>=1&flag:path_chosen zone=linh_mach
+  obj reach poi=vein_terrace text=quest.m1_altar.o1
+  reward exp=90 stones=20 item=memory_shard*1
+  on_done "flag+:act2_unlocked;act:2;cut:memory_reveal"

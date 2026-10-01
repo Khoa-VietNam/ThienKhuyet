@@ -736,7 +736,21 @@ namespace ThienKhuyet.World
             kit.Finish(false);
             RuneDecal.Create(inst.root.transform, c + Vector3.up * 0.7f, 19f, new Color(0.6f, 0.8f, 1f), 0.35f, 2f, 7);
             FloatingShards.Create(inst.root.transform, c + Vector3.up * 8f, 26, 30f, 4f, 40f, A.matGlowCyan, 5);
-            SetAnchor("heart_center", c + Vector3.up * 0.8f, 0f);
+            Vector3 gatePosition = c + Vector3.up * 0.8f;
+            var gate = new GameObject("SkybreakGate");
+            gate.layer = GameLayers.Interactable;
+            gate.transform.SetParent(inst.root.transform, false);
+            gate.transform.position = gatePosition;
+            var gateCollider = gate.AddComponent<SphereCollider>();
+            gateCollider.radius = 2.5f;
+            gateCollider.isTrigger = true;
+            var gateInteract = gate.AddComponent<ScriptedInteract>();
+            gateInteract.objectId = "skybreak_gate";
+            gateInteract.promptKey = "prompt.touch";
+            gateInteract.condition = "flag:final_choice_unlocked&realm>=3";
+            gateInteract.effects = "flag+:ending_gate_entered;cut:ending_choice";
+            gateInteract.once = true;
+            SetAnchor("heart_center", gatePosition, 0f);
         }
 
         void BuildRiftValley(PoiInstance inst)

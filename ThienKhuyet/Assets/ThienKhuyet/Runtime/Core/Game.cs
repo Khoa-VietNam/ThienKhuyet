@@ -20,6 +20,7 @@ namespace ThienKhuyet.Core
         public Player.PlayerState player;
         public QuestLog quests;
         public readonly HashSet<string> killedSpawns = new HashSet<string>();
+        public readonly Dictionary<string, int> enemyKillCounts = new Dictionary<string, int>();
         public readonly HashSet<string> openedContainers = new HashSet<string>();
         public readonly HashSet<string> discoveredPois = new HashSet<string>();
         public readonly HashSet<string> seenCutscenes = new HashSet<string>();
