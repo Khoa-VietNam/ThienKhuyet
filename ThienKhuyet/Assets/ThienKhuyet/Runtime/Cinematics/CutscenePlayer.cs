@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ThienKhuyet.Audio;
+using ThienKhuyet.Characters;
 using ThienKhuyet.Core;
 using ThienKhuyet.Gfx;
 using ThienKhuyet.Narrative;

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using ThienKhuyet.Characters;
 using ThienKhuyet.Core;
 using ThienKhuyet.Data;
 using ThienKhuyet.Player;
