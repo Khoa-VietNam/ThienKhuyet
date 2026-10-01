@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="ThienKhuyet.Runtime.csproj" />
+  <Project Path="ThienKhuyet.Tests.EditMode.csproj" />
+</Solution>

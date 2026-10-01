@@ -1,0 +1,342 @@
+# Humanoid pose clips. Format documented in Characters/PoseCore.cs (PoseParser).
+# Joints: Hp Sp Ch Nk Hd ArR FoR HaR ArL FoL HaL ThR KnR AnR ThL KnL AnL, plus Pos (hips offset).
+# Euler ZXY in degrees. Arms: x<0 swings forward/up, z>0 abducts outward, y>0 yaws right.
+# Elbow: FoR x<0 flexes. Knee: KnR x>0 flexes. The left side uses the same semantic as the right side (mirrored in code).
+# Right hand holds the weapon; blade direction = hand -Y.
+
+# ------------------------------------------------------------------ SWORD / BLADE
+clip sword_l1 dur=0.62 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+  k 0.16 e=inout Ch=-4,26,0 Hp=0,16,0 ArR=-150,24,16 FoR=-70,0,0 ArL=-40,-10,26 FoL=-20,0,0 ThR=6,0,4 KnR=12,0,0 ThL=-10,0,3 KnL=8,0,0 Pos=0,-0.03,-0.05
+  k 0.30 e=out Ch=8,-34,0 Hp=3,-26,0 ArR=-62,-40,8 FoR=-16,0,0 ArL=10,20,28 FoL=-50,0,0 ThR=-34,0,4 KnR=20,0,0 ThL=18,0,3 KnL=14,0,0 Pos=0,-0.08,0.1
+  k 0.62 e=inout Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+
+clip sword_l2 dur=0.60 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-34,0 Hp=3,-26,0 ArR=-62,-40,8 FoR=-16,0,0 ArL=10,20,28 FoL=-50,0,0 ThR=-34,0,4 KnR=20,0,0 ThL=18,0,3 KnL=14,0,0 Pos=0,-0.08,0.1
+  k 0.14 e=inout Ch=-2,-40,0 Hp=0,-30,0 ArR=-85,-58,10 FoR=-40,0,0 HaR=0,0,0 ArL=0,30,30 FoL=-40,0,0 ThR=-24,0,4 KnR=16,0,0 ThL=14,0,3 KnL=10,0,0 Pos=0,-0.05,0.05
+  k 0.30 e=out Ch=5,26,0 Hp=2,18,0 ArR=-80,38,18 FoR=-12,0,0 HaR=0,0,0 ArL=-20,-20,20 FoL=-20,0,0 ThR=12,0,4 KnR=10,0,0 ThL=-26,0,3 KnL=22,0,0 Pos=0,-0.06,0.1
+  k 0.60 e=inout Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+
+clip sword_l3 dur=0.80 ease=out blend=0.05 out=0.18
+  k 0.00 Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+  k 0.22 e=inout Ch=-2,22,0 Hp=0,16,0 ArR=10,-34,18 FoR=-100,0,0 HaR=-8,0,0 ArL=-30,-10,26 FoL=-20,0,0 ThR=10,0,4 KnR=14,0,0 ThL=-14,0,3 KnL=10,0,0 Pos=0,-0.06,-0.1
+  k 0.36 e=out Ch=12,-14,0 Hp=8,-10,0 ArR=-92,22,4 FoR=-4,0,0 HaR=0,0,0 ArL=10,20,30 FoL=-40,0,0 ThR=-48,0,4 KnR=30,0,0 ThL=24,0,3 KnL=16,0,0 Pos=0,-0.16,0.26
+  k 0.52 e=smooth ArR=-92,22,4 FoR=-4,0,0 Pos=0,-0.16,0.26
+  k 0.80 e=inout Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+
+clip sword_heavy dur=1.15 ease=out blend=0.08 out=0.2
+  k 0.00 Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+  k 0.50 e=inout Ch=-14,12,0 Hp=-4,10,0 ArR=-172,14,12 FoR=-60,0,0 ArL=-165,-14,20 FoL=-60,0,0 ThR=14,0,5 KnR=16,0,0 ThL=-16,0,5 KnL=10,0,0 Pos=0,0.0,-0.1
+  k 0.60 e=smooth Pos=0,0.0,-0.1
+  k 0.74 e=out Ch=26,0,0 Hp=14,0,0 ArR=-82,2,6 FoR=-6,0,0 ArL=-80,-4,8 FoL=-6,0,0 ThR=-52,0,5 KnR=34,0,0 ThL=26,0,5 KnL=22,0,0 Pos=0,-0.2,0.3
+  k 0.90 e=smooth Pos=0,-0.2,0.3
+  k 1.15 e=inout Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ArL=-20,0,22 FoL=-30,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+
+clip guard_sword dur=0.4 ease=out blend=0.07 out=0.14 hold=1
+  k 0.00 Ch=0,-12,0 Hp=0,-6,0 ArR=-70,-30,10 FoR=-100,0,0 ArL=-60,10,16 FoL=-90,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.40 Ch=0,-12,0 Hp=0,-6,0 ArR=-70,-30,10 FoR=-100,0,0 ArL=-60,10,16 FoL=-90,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+
+clip guard_spear dur=0.4 ease=out blend=0.07 out=0.14 hold=1
+  k 0.00 Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.40 Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+
+clip guard_staff dur=0.4 ease=out blend=0.07 out=0.14 hold=1
+  k 0.00 Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+  k 0.40 Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+
+clip guard_fist dur=0.4 ease=out blend=0.07 out=0.14 hold=1
+  k 0.00 Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+
+clip parry dur=0.38 ease=out blend=0.03 out=0.12
+  k 0.00 Ch=0,-12,0 Hp=0,-6,0 ArR=-70,-30,10 FoR=-100,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.09 Ch=-2,28,0 Hp=0,18,0 ArR=-76,52,18 FoR=-30,0,0 ThR=-24,0,4 KnR=20,0,0 ThL=16,0,4 KnL=14,0,0 Pos=0,-0.08,0.05
+  k 0.38 e=inout Ch=0,0,0 Hp=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0 ThR=-8,0,3 KnR=8,0,0 ThL=10,0,3 KnL=10,0,0 Pos=0,-0.02,0
+
+# ------------------------------------------------------------------ FISTS
+clip fist_l1 dur=0.42 ease=out blend=0.04 out=0.14
+  k 0.00 Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+  k 0.10 e=inout ArR=-30,-10,10 FoR=-140,0,0 Ch=6,-24,0 Hp=0,-14,0
+  k 0.18 e=out ArR=-94,2,2 FoR=-6,0,0 Ch=8,16,0 Hp=2,10,0 ThR=-22,0,4 KnR=18,0,0 ThL=18,0,4 KnL=16,0,0 Pos=0,-0.1,0.16
+  k 0.42 e=inout Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+
+clip fist_l2 dur=0.44 ease=out blend=0.04 out=0.14
+  k 0.00 Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+  k 0.11 e=inout ArL=-30,10,12 FoL=-140,0,0 Ch=6,20,0 Hp=0,12,0
+  k 0.19 e=out ArL=-96,-2,2 FoL=-6,0,0 Ch=8,-26,0 Hp=2,-18,0 ThR=-18,0,4 KnR=16,0,0 ThL=22,0,4 KnL=20,0,0 Pos=0,-0.1,0.16
+  k 0.44 e=inout Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+
+clip fist_l3 dur=0.64 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+  k 0.18 e=inout Ch=-4,-20,0 Hp=0,-18,0 ThR=-20,0,12 KnR=70,0,0 ThL=22,0,4 KnL=24,0,0 ArL=-40,20,30 FoL=-70,0,0 ArR=-40,-20,30 FoR=-90,0,0 Pos=0,-0.1,-0.05
+  k 0.30 e=out Ch=-12,30,0 Hp=-6,34,0 ThR=-88,-6,26 KnR=14,0,0 ThL=14,0,4 KnL=28,0,0 ArL=-20,30,40 FoL=-50,0,0 ArR=-80,-30,40 FoR=-50,0,0 Pos=0,-0.08,0.06
+  k 0.64 e=inout Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+
+clip fist_heavy dur=1.0 ease=out blend=0.08 out=0.2
+  k 0.00 Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+  k 0.38 e=inout Ch=-8,-26,0 Hp=0,-20,0 ArR=-30,-30,34 FoR=-130,0,0 ArL=-40,-20,30 FoL=-120,0,0 ThR=10,0,6 KnR=22,0,0 ThL=-14,0,6 KnL=18,0,0 Pos=0,-0.14,-0.14
+  k 0.48 e=out Ch=14,22,0 Hp=8,18,0 ArR=-90,-4,10 FoR=-6,0,0 ArL=-92,6,14 FoL=-8,0,0 ThR=-46,0,6 KnR=30,0,0 ThL=24,0,6 KnL=26,0,0 Pos=0,-0.22,0.28
+  k 0.70 e=smooth Pos=0,-0.22,0.28
+  k 1.00 e=inout Ch=6,-10,0 Hp=0,-6,0 ArR=-50,-10,8 FoR=-125,0,0 ArL=-60,10,12 FoL=-120,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.07,0
+
+# ------------------------------------------------------------------ SPEAR
+clip spear_l1 dur=0.58 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.14 e=inout Ch=0,-34,0 Hp=0,-22,0 ArR=-40,24,12 FoR=-120,0,0 ArL=-50,-30,10 FoL=-80,0,0 ThR=2,0,4 KnR=24,0,0 ThL=-6,0,4 KnL=16,0,0 Pos=0,-0.1,-0.12
+  k 0.26 e=out Ch=6,14,0 Hp=3,8,0 ArR=-86,-4,6 FoR=-4,0,0 ArL=-80,-14,10 FoL=-30,0,0 ThR=-48,0,4 KnR=30,0,0 ThL=24,0,4 KnL=22,0,0 Pos=0,-0.14,0.3
+  k 0.58 e=inout Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+
+clip spear_l2 dur=0.66 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.18 e=inout Ch=0,-50,0 Hp=0,-36,0 ArR=-60,-40,16 FoR=-50,0,0 ArL=-60,-60,12 FoL=-50,0,0 Pos=0,-0.08,-0.04
+  k 0.36 e=out Ch=2,48,0 Hp=0,34,0 ArR=-70,56,20 FoR=-30,0,0 ArL=-70,40,14 FoL=-40,0,0 ThR=-30,0,6 KnR=20,0,0 ThL=18,0,4 KnL=14,0,0 Pos=0,-0.1,0.12
+  k 0.66 e=inout Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+
+clip spear_heavy dur=1.2 ease=out blend=0.08 out=0.2
+  k 0.00 Ch=0,-20,0 Hp=0,-10,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+  k 0.30 e=inout Ch=4,-50,0 Hp=0,-40,0 ArR=-60,-20,20 FoR=-60,0,0 ArL=-60,-60,14 FoL=-60,0,0 Pos=0,-0.16,-0.06
+  k 0.72 e=inout Ch=4,300,0 Hp=0,320,0 ArR=-70,30,30 FoR=-20,0,0 ArL=-70,10,24 FoL=-30,0,0 ThR=-24,0,8 KnR=22,0,0 ThL=16,0,8 KnL=18,0,0 Pos=0,-0.14,0.0
+  k 1.2 e=inout Ch=0,360,0 Hp=0,360,0 ArR=-50,20,10 FoR=-90,0,0 ArL=-60,-30,10 FoL=-80,0,0 ThR=-14,0,4 KnR=16,0,0 ThL=14,0,4 KnL=14,0,0 Pos=0,-0.06,0
+
+# ------------------------------------------------------------------ STAFF
+clip staff_l1 dur=0.62 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+  k 0.18 e=inout Ch=-6,24,0 Hp=0,16,0 ArR=-150,10,16 FoR=-70,0,0 ArL=-140,-10,20 FoL=-70,0,0 Pos=0,-0.03,-0.04
+  k 0.32 e=out Ch=12,-20,0 Hp=6,-14,0 ArR=-70,-30,10 FoR=-30,0,0 ArL=-66,-6,16 FoL=-34,0,0 ThR=-30,0,4 KnR=18,0,0 ThL=18,0,4 KnL=14,0,0 Pos=0,-0.1,0.12
+  k 0.62 e=inout Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+
+clip staff_l2 dur=0.62 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=12,-20,0 Hp=6,-14,0 ArR=-70,-30,10 FoR=-30,0,0 ArL=-66,-6,16 FoL=-34,0,0 ThR=-30,0,4 KnR=18,0,0 ThL=18,0,4 KnL=14,0,0 Pos=0,-0.1,0.12
+  k 0.18 e=inout Ch=0,-34,0 Hp=0,-24,0 ArR=-80,-60,12 FoR=-60,0,0 ArL=-80,-40,16 FoL=-60,0,0 Pos=0,-0.06,0.02
+  k 0.34 e=out Ch=8,34,0 Hp=4,24,0 ArR=-84,50,16 FoR=-24,0,0 ArL=-84,34,14 FoL=-30,0,0 ThR=-16,0,4 KnR=14,0,0 ThL=-14,0,4 KnL=16,0,0 Pos=0,-0.08,0.1
+  k 0.62 e=inout Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+
+clip staff_l3 dur=0.85 ease=out blend=0.05 out=0.18
+  k 0.00 Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+  k 0.30 e=inout Ch=-12,0,0 Hp=-4,0,0 ArR=-170,6,12 FoR=-60,0,0 ArL=-165,-6,16 FoL=-60,0,0 ThR=8,0,5 KnR=10,0,0 ThL=-8,0,5 KnL=8,0,0 Pos=0,0,-0.06
+  k 0.44 e=out Ch=30,0,0 Hp=16,0,0 ArR=-80,0,6 FoR=-10,0,0 ArL=-80,0,8 FoL=-12,0,0 ThR=-44,0,5 KnR=34,0,0 ThL=22,0,5 KnL=26,0,0 Pos=0,-0.24,0.26
+  k 0.62 e=smooth Pos=0,-0.24,0.26
+  k 0.85 e=inout Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+
+clip staff_heavy dur=1.15 ease=out blend=0.08 out=0.2
+  k 0.00 Ch=0,-10,0 Hp=0,-6,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+  k 0.40 e=inout Ch=2,-60,0 Hp=0,-44,0 ArR=-80,-60,14 FoR=-60,0,0 ArL=-80,-40,16 FoL=-60,0,0 Pos=0,-0.12,-0.05
+  k 0.68 e=out Ch=2,300,0 Hp=0,320,0 ArR=-82,40,14 FoR=-20,0,0 ArL=-82,22,14 FoL=-26,0,0 ThR=-24,0,8 KnR=20,0,0 ThL=18,0,8 KnL=16,0,0 Pos=0,-0.12,0.05
+  k 1.15 e=inout Ch=0,350,0 Hp=0,354,0 ArR=-60,-10,12 FoR=-110,0,0 ArL=-60,20,14 FoL=-100,0,0 ThR=-12,0,4 KnR=14,0,0 ThL=12,0,4 KnL=12,0,0 Pos=0,-0.05,0
+
+# ------------------------------------------------------------------ REACTIONS / MOVEMENT
+clip hit_light dur=0.34 ease=out blend=0.03 out=0.12
+  k 0.00 Ch=0,0,0 Hp=0,0,0 Hd=0,0,0
+  k 0.06 Ch=-12,8,4 Hp=-6,4,0 Hd=-14,0,0 ArR=18,0,18 ArL=18,0,18 FoR=-30,0,0 FoL=-30,0,0 Pos=0,-0.03,-0.08
+  k 0.34 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 ArL=6,0,8 FoR=-14,0,0 FoL=-14,0,0 Pos=0,0,0
+
+clip hit_heavy dur=0.9 ease=out blend=0.03 out=0.2
+  k 0.00 Ch=0,0,0 Hp=0,0,0 Hd=0,0,0
+  k 0.12 Ch=-22,12,6 Hp=-14,8,0 Hd=-22,0,0 ArR=40,0,34 ArL=40,0,34 FoR=-40,0,0 FoL=-40,0,0 ThR=10,0,8 KnR=20,0,0 ThL=-20,0,8 KnL=30,0,0 Pos=0,-0.12,-0.2
+  k 0.50 e=smooth Ch=14,-6,0 Hp=10,-4,0 Hd=16,0,0 ArR=20,0,26 ArL=20,0,26 FoR=-30,0,0 FoL=-30,0,0 ThR=-10,0,8 KnR=40,0,0 ThL=-14,0,8 KnL=44,0,0 Pos=0,-0.24,-0.12
+  k 0.90 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 ArL=6,0,8 FoR=-14,0,0 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip stagger dur=1.3 ease=out blend=0.04 out=0.25
+  k 0.00 Ch=0,0,0 Hp=0,0,0 Hd=0,0,0
+  k 0.15 Ch=-20,0,8 Hp=-10,0,0 Hd=-18,0,10 ArR=30,0,40 ArL=30,0,40 FoR=-50,0,0 FoL=-50,0,0 ThR=6,0,8 KnR=26,0,0 ThL=-16,0,8 KnL=34,0,0 Pos=0,-0.14,-0.16
+  k 0.6 e=smooth Ch=22,6,4 Hp=14,4,0 Hd=24,0,6 ArR=14,0,30 ArL=14,0,30 FoR=-40,0,0 FoL=-40,0,0 ThR=-6,0,8 KnR=46,0,0 ThL=-10,0,8 KnL=52,0,0 Pos=0,-0.3,-0.08
+  k 1.3 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 ArL=6,0,8 FoR=-14,0,0 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip death dur=1.6 ease=out blend=0.05 hold=1
+  k 0.00 Ch=0,0,0 Hp=0,0,0 Hd=0,0,0
+  k 0.25 Ch=-24,6,6 Hp=-14,0,0 Hd=-20,0,12 ArR=40,0,40 ArL=40,0,40 FoR=-40,0,0 FoL=-40,0,0 ThR=10,0,8 KnR=40,0,0 ThL=-20,0,8 KnL=60,0,0 Pos=0,-0.25,-0.2
+  k 0.7 e=in Ch=-70,10,0 Hp=-60,0,0 Hd=-10,0,10 ArR=70,0,60 ArL=60,0,50 FoR=-30,0,0 FoL=-30,0,0 ThR=-20,0,10 KnR=70,0,0 ThL=-40,0,10 KnL=90,0,0 Pos=0,-0.55,-0.45
+  k 1.1 e=out Ch=-90,0,0 Hp=-88,0,0 Hd=0,0,6 ArR=30,0,70 ArL=40,0,60 FoR=-20,0,0 FoL=-20,0,0 ThR=-4,0,12 KnR=10,0,0 ThL=-6,0,14 KnL=14,0,0 Pos=0,-0.82,-0.5
+  k 1.6 Pos=0,-0.86,-0.5
+
+clip dodge_roll dur=0.5 ease=inout blend=0.04 out=0.12
+  k 0.00 Ch=0,0,0 Hp=0,0,0 Pos=0,0,0
+  k 0.08 Ch=22,0,0 Hp=12,0,0 ThR=-50,0,0 KnR=60,0,0 ThL=-50,0,0 KnL=60,0,0 ArR=-50,0,10 ArL=-50,0,10 FoR=-100,0,0 FoL=-100,0,0 Pos=0,-0.2,0.06
+  k 0.26 Ch=60,0,0 Hp=190,0,0 ThR=-100,0,0 KnR=120,0,0 ThL=-100,0,0 KnL=120,0,0 ArR=-70,0,10 ArL=-70,0,10 FoR=-130,0,0 FoL=-130,0,0 Pos=0,-0.5,0.2
+  k 0.44 Ch=20,0,0 Hp=350,0,0 ThR=-40,0,0 KnR=50,0,0 ThL=-40,0,0 KnL=50,0,0 Pos=0,-0.2,0.3
+  k 0.5 Ch=0,0,0 Hp=360,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0.3
+
+clip jump_up dur=0.4 ease=out blend=0.05 out=0.1
+  k 0.00 Ch=6,0,0 ArR=20,0,24 ArL=20,0,24 FoR=-40,0,0 FoL=-40,0,0 ThR=-8,0,3 ThL=-8,0,3 KnR=8,0,0 KnL=8,0,0 Pos=0,-0.12,0
+  k 0.2 Ch=-4,0,0 ArR=-70,0,30 ArL=-70,0,30 FoR=-40,0,0 FoL=-40,0,0 ThR=-50,0,4 KnR=70,0,0 ThL=-10,0,4 KnL=40,0,0 Pos=0,0.0,0
+
+clip fall dur=0.6 ease=out blend=0.1 out=0.1 loop=1
+  k 0.00 Ch=4,0,0 ArR=-30,0,40 ArL=-30,0,40 FoR=-30,0,0 FoL=-30,0,0 ThR=-24,0,6 KnR=40,0,0 ThL=-6,0,6 KnL=20,0,0
+  k 0.6 Ch=4,0,0 ArR=-34,0,46 ArL=-34,0,46 FoR=-34,0,0 FoL=-34,0,0 ThR=-24,0,6 KnR=40,0,0 ThL=-6,0,6 KnL=20,0,0
+
+clip land dur=0.32 ease=out blend=0.03 out=0.14
+  k 0.00 Ch=14,0,0 Hp=8,0,0 ThR=-40,0,6 KnR=70,0,0 ThL=-40,0,6 KnL=70,0,0 ArR=-30,0,30 ArL=-30,0,30 Pos=0,-0.3,0
+  k 0.32 e=inout Ch=0,0,0 Hp=0,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 ArR=6,0,8 ArL=6,0,8 Pos=0,0,0
+
+# ------------------------------------------------------------------ CASTING
+clip cast_forward dur=0.7 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-10,0 ArR=-30,0,16 FoR=-60,0,0 ArL=-20,0,20 FoL=-40,0,0
+  k 0.18 e=inout Ch=-4,12,0 Hp=0,6,0 ArR=-70,20,30 FoR=-110,0,0 ArL=-50,-20,24 FoL=-80,0,0 Pos=0,-0.04,-0.04
+  k 0.32 e=out Ch=6,-14,0 Hp=2,-8,0 ArR=-92,-6,6 FoR=-6,0,0 HaR=-20,0,0 ArL=-10,24,34 FoL=-60,0,0 ThR=-24,0,4 KnR=14,0,0 ThL=14,0,4 KnL=12,0,0 Pos=0,-0.08,0.1
+  k 0.7 e=inout Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 HaR=0,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip cast_palm dur=0.7 ease=out blend=0.05 out=0.16
+  k 0.00 Ch=0,-10,0 ArR=-30,0,16 FoR=-60,0,0
+  k 0.2 e=inout Ch=-4,-26,0 Hp=0,-20,0 ArR=-30,-30,30 FoR=-130,0,0 ArL=-60,20,30 FoL=-90,0,0 ThR=6,0,6 KnR=20,0,0 ThL=-10,0,4 KnL=14,0,0 Pos=0,-0.12,-0.1
+  k 0.32 e=out Ch=10,22,0 Hp=6,16,0 ArR=-92,-2,6 FoR=-4,0,0 HaR=-70,0,0 ArL=-20,24,30 FoL=-50,0,0 ThR=-44,0,5 KnR=28,0,0 ThL=22,0,4 KnL=24,0,0 Pos=0,-0.18,0.24
+  k 0.7 e=inout Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 HaR=0,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip cast_slash dur=0.6 ease=out blend=0.04 out=0.16
+  k 0.00 Ch=0,0,0 ArR=-50,10,16 FoR=-62,0,0 HaR=-18,0,0
+  k 0.14 e=inout Ch=-4,34,0 Hp=0,24,0 ArR=-100,50,20 FoR=-80,0,0 ArL=-20,-10,26 FoL=-30,0,0 Pos=0,-0.04,-0.04
+  k 0.26 e=out Ch=6,-40,0 Hp=2,-30,0 ArR=-84,-54,10 FoR=-10,0,0 ArL=10,20,28 FoL=-50,0,0 ThR=-30,0,4 KnR=18,0,0 ThL=16,0,4 KnL=12,0,0 Pos=0,-0.08,0.1
+  k 0.6 e=inout Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip cast_up dur=1.0 ease=out blend=0.06 out=0.18
+  k 0.00 Ch=0,0,0
+  k 0.35 e=inout Ch=-12,0,0 Hp=-4,0,0 Hd=-14,0,0 ArR=-160,10,30 FoR=-20,0,0 ArL=-160,-10,30 FoL=-20,0,0 ThR=6,0,5 KnR=10,0,0 ThL=-6,0,5 KnL=8,0,0 Pos=0,0.02,-0.02
+  k 0.7 e=smooth Ch=-12,0,0 Hd=-14,0,0 ArR=-170,10,34 ArL=-170,-10,34
+  k 1.0 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip cast_slam dur=0.9 ease=out blend=0.06 out=0.18
+  k 0.00 Ch=0,0,0
+  k 0.3 e=inout Ch=-14,0,0 Hd=-10,0,0 ArR=-150,10,24 FoR=-30,0,0 ArL=-150,-10,24 FoL=-30,0,0 Pos=0,0,-0.04
+  k 0.46 e=out Ch=30,0,0 Hp=14,0,0 Hd=14,0,0 ArR=-30,0,16 FoR=-10,0,0 ArL=-30,0,16 FoL=-10,0,0 ThR=-30,0,6 KnR=36,0,0 ThL=14,0,6 KnL=30,0,0 Pos=0,-0.3,0.12
+  k 0.9 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip cast_buff dur=1.0 ease=out blend=0.06 out=0.18
+  k 0.00 Ch=0,0,0
+  k 0.3 e=inout Ch=4,0,0 Hd=8,0,0 ArR=-50,-40,6 FoR=-110,0,0 ArL=-50,-40,6 FoL=-110,0,0 Pos=0,-0.04,0
+  k 0.6 e=out Ch=-6,0,0 Hd=-8,0,0 ArR=-20,20,60 FoR=-30,0,0 ArL=-20,20,60 FoL=-30,0,0 Pos=0,0.01,0
+  k 1.0 e=inout Ch=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 Pos=0,0,0
+
+clip cast_dash dur=0.4 ease=out blend=0.03 out=0.12
+  k 0.00 Ch=0,0,0
+  k 0.12 Ch=34,0,0 Hp=16,0,0 Hd=-18,0,0 ArR=40,0,10 ArL=40,0,10 FoR=-30,0,0 FoL=-30,0,0 ThR=-40,0,0 KnR=50,0,0 ThL=30,0,0 KnL=30,0,0 Pos=0,-0.08,0.06
+  k 0.4 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+# ------------------------------------------------------------------ MEDITATION / REST / STORY
+clip meditate dur=1.2 ease=out blend=0.5 out=0.5 hold=1
+  k 0.00 Pos=0,-0.44,0 Hp=4,0,0 Sp=-4,0,0 Ch=-2,0,0 Hd=4,0,0 ThR=-88,18,62 KnR=135,0,0 AnR=30,0,0 ThL=-88,18,62 KnL=135,0,0 AnL=30,0,0 ArR=-38,-14,14 FoR=-62,0,0 HaR=-10,0,0 ArL=-38,-14,14 FoL=-62,0,0 HaL=-10,0,0
+  k 1.2 Pos=0,-0.44,0 Hp=4,0,0 Sp=-4,0,0 Ch=-2,0,0 Hd=4,0,0
+
+clip sit_ground dur=1.0 ease=out blend=0.4 out=0.4 hold=1
+  k 0.00 Pos=0,-0.5,-0.05 Hp=6,0,0 Ch=8,0,0 Hd=0,0,0 ThR=-95,6,10 KnR=95,0,0 ThL=-95,-6,10 KnL=95,0,0 ArR=-30,0,14 FoR=-80,0,0 ArL=-30,0,14 FoL=-80,0,0
+
+clip lie_back dur=1.0 ease=out blend=0.3 out=0.3 hold=1
+  k 0.00 Pos=0,-0.88,-0.48 Hp=-90,0,0 Hd=-4,0,0 ArR=0,0,22 ArL=0,0,22 FoR=-8,0,0 FoL=-8,0,0 ThR=0,0,6 ThL=0,0,6 KnR=6,0,0 KnL=6,0,0
+
+clip wake_up dur=3.0 ease=smooth blend=0.2 out=0.3
+  k 0.00 Pos=0,-0.88,-0.48 Hp=-90,0,0 Hd=-4,0,0 ArR=0,0,22 ArL=0,0,22 FoR=-8,0,0 FoL=-8,0,0 ThR=0,0,6 ThL=0,0,6 KnR=6,0,0 KnL=6,0,0
+  k 0.8 Pos=0,-0.88,-0.48 Hp=-90,0,0 Hd=-24,0,0
+  k 1.6 Pos=0,-0.56,-0.12 Hp=-30,0,0 Sp=-10,0,0 Ch=-6,0,0 Hd=14,0,0 ThR=-70,0,8 KnR=70,0,0 ThL=-70,0,8 KnL=70,0,0 ArR=30,0,24 ArL=30,0,24 FoR=-30,0,0 FoL=-30,0,0
+  k 2.4 Pos=0,-0.18,0 Hp=8,0,0 Sp=0,0,0 Ch=8,0,0 Hd=10,0,0 ThR=-30,0,8 KnR=50,0,0 ThL=-30,0,8 KnL=50,0,0 ArR=10,0,18 ArL=10,0,18
+  k 3.0 Pos=0,0,0 Hp=0,0,0 Ch=0,0,0 Hd=0,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 ArR=6,0,8 ArL=6,0,8 FoR=-14,0,0 FoL=-14,0,0
+
+clip kneel dur=1.0 ease=out blend=0.3 out=0.3 hold=1
+  k 0.00 Pos=0,-0.38,0.1 Hp=0,0,0 Ch=14,0,0 Hd=16,0,0 ThR=-60,0,4 KnR=90,0,0 ThL=10,0,4 KnL=120,0,0 ArR=-20,0,12 FoR=-50,0,0 ArL=-20,0,12 FoL=-50,0,0
+
+clip gather dur=1.0 ease=inout blend=0.15 out=0.2
+  k 0.00 Ch=0,0,0
+  k 0.35 Pos=0,-0.32,0.1 Hp=24,0,0 Ch=30,0,0 Hd=-10,0,0 ThR=-70,0,6 KnR=100,0,0 ThL=-70,0,6 KnL=100,0,0 ArR=-70,0,10 FoR=-30,0,0 ArL=-50,0,16 FoL=-40,0,0
+  k 0.65 ArR=-60,0,10 FoR=-60,0,0
+  k 1.0 Pos=0,0,0 Hp=0,0,0 Ch=0,0,0 Hd=0,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+
+clip gesture_a dur=1.4 ease=inout blend=0.2 out=0.25
+  k 0.00 ArR=6,0,8 FoR=-14,0,0
+  k 0.4 ArR=-50,10,36 FoR=-90,0,0 HaR=-20,0,0 Hd=0,8,0 Ch=0,6,0
+  k 0.9 ArR=-56,10,40 FoR=-80,0,0 HaR=-20,0,0 Hd=4,8,0 Ch=0,6,0
+  k 1.4 ArR=6,0,8 FoR=-14,0,0 HaR=0,0,0 Hd=0,0,0 Ch=0,0,0
+
+clip gesture_b dur=1.6 ease=inout blend=0.2 out=0.25
+  k 0.00 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+  k 0.45 ArR=-46,-8,34 FoR=-84,0,0 ArL=-46,-8,34 FoL=-84,0,0 Hd=-4,0,0
+  k 1.0 ArR=-40,6,52 FoR=-70,0,0 ArL=-40,6,52 FoL=-70,0,0 Hd=0,0,0
+  k 1.6 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 Hd=0,0,0
+
+clip point dur=1.4 ease=inout blend=0.2 out=0.25
+  k 0.00 ArR=6,0,8 FoR=-14,0,0
+  k 0.35 ArR=-86,16,8 FoR=-6,0,0 HaR=-10,0,0 Ch=0,10,0 Hd=0,12,0
+  k 1.0 ArR=-88,16,8 FoR=-4,0,0 HaR=-10,0,0 Ch=0,10,0 Hd=0,12,0
+  k 1.4 ArR=6,0,8 FoR=-14,0,0 HaR=0,0,0 Ch=0,0,0 Hd=0,0,0
+
+clip salute dur=1.8 ease=inout blend=0.25 out=0.3
+  k 0.00 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+  k 0.5 ArR=-48,-34,10 FoR=-110,0,0 ArL=-48,-34,10 FoL=-110,0,0 Hd=14,0,0 Ch=8,0,0
+  k 1.3 ArR=-48,-34,10 FoR=-110,0,0 ArL=-48,-34,10 FoL=-110,0,0 Hd=14,0,0 Ch=8,0,0
+  k 1.8 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 Hd=0,0,0 Ch=0,0,0
+
+clip bow dur=1.6 ease=inout blend=0.25 out=0.3
+  k 0.00 Ch=0,0,0
+  k 0.5 Ch=36,0,0 Hp=10,0,0 Hd=14,0,0 ArR=-30,-20,10 FoR=-100,0,0 ArL=-30,-20,10 FoL=-100,0,0
+  k 1.1 Ch=36,0,0 Hp=10,0,0 Hd=14,0,0 ArR=-30,-20,10 FoR=-100,0,0 ArL=-30,-20,10 FoL=-100,0,0
+  k 1.6 Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+
+clip nod dur=0.7 ease=inout blend=0.1 out=0.15
+  k 0.00 Hd=0,0,0
+  k 0.2 Hd=18,0,0
+  k 0.45 Hd=-4,0,0
+  k 0.7 Hd=0,0,0
+
+clip shake_head dur=0.8 ease=inout blend=0.1 out=0.15
+  k 0.00 Hd=0,0,0
+  k 0.2 Hd=0,-22,0
+  k 0.4 Hd=0,22,0
+  k 0.6 Hd=0,-14,0
+  k 0.8 Hd=0,0,0
+
+clip startled dur=0.9 ease=out blend=0.04 out=0.2
+  k 0.00 Ch=0,0,0
+  k 0.12 Ch=-12,0,0 Hd=-10,0,0 ArR=-60,0,50 ArL=-60,0,50 FoR=-70,0,0 FoL=-70,0,0 ThR=8,0,6 KnR=16,0,0 ThL=-16,0,6 KnL=10,0,0 Pos=0,-0.04,-0.12
+  k 0.9 e=inout Ch=0,0,0 Hd=0,0,0 ArR=6,0,8 ArL=6,0,8 FoR=-14,0,0 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip look_around dur=3.0 ease=inout blend=0.3 out=0.3
+  k 0.00 Hd=0,0,0 Ch=0,0,0
+  k 0.8 Hd=-4,-48,0 Ch=0,-14,0
+  k 1.6 Hd=-4,0,0 Ch=0,0,0
+  k 2.4 Hd=-4,48,0 Ch=0,14,0
+  k 3.0 Hd=0,0,0 Ch=0,0,0
+
+clip reach_out dur=1.2 ease=inout blend=0.2 out=0.25 hold=1
+  k 0.00 ArR=6,0,8 FoR=-14,0,0
+  k 0.7 ArR=-86,6,12 FoR=-12,0,0 HaR=-24,0,0 Hd=6,0,0 Ch=6,0,0
+  k 1.2 ArR=-88,6,12 FoR=-8,0,0 HaR=-26,0,0 Hd=6,0,0 Ch=6,0,0
+
+clip fall_free dur=1.6 ease=smooth blend=0.3 out=0.3 loop=1
+  k 0.00 Pos=0,0,0 Hp=-30,0,0 Ch=-14,0,0 Hd=-20,0,0 ArR=-130,0,70 ArL=-120,0,60 FoR=-30,0,0 FoL=-40,0,0 ThR=16,0,14 KnR=60,0,0 ThL=24,0,10 KnL=40,0,0
+  k 0.8 Pos=0,0,0 Hp=-34,0,0 Ch=-16,0,0 Hd=-22,0,0 ArR=-120,0,64 ArL=-132,0,72 FoR=-40,0,0 FoL=-30,0,0 ThR=24,0,10 KnR=40,0,0 ThL=16,0,14 KnL=60,0,0
+  k 1.6 Pos=0,0,0 Hp=-30,0,0 Ch=-14,0,0 Hd=-20,0,0 ArR=-130,0,70 ArL=-120,0,60 FoR=-30,0,0 FoL=-40,0,0 ThR=16,0,14 KnR=60,0,0 ThL=24,0,10 KnL=40,0,0
+
+clip walk_slow dur=1.0 ease=linear loop=1 blend=0.3 out=0.3
+  k 0.00 ThR=-18,0,2 KnR=10,0,0 ThL=18,0,2 KnL=20,0,0 ArR=14,0,6 ArL=-14,0,6
+  k 0.5 ThR=18,0,2 KnR=20,0,0 ThL=-18,0,2 KnL=10,0,0 ArR=-14,0,6 ArL=14,0,6
+  k 1.0 ThR=-18,0,2 KnR=10,0,0 ThL=18,0,2 KnL=20,0,0 ArR=14,0,6 ArL=-14,0,6
+
+# ------------------------------------------------------------------ weapon-ready stances (blended over locomotion by HumanoidAnimator)
+clip stance_sword dur=1 ease=linear
+  k 0.00 Ch=0,-8,0 Hp=0,-4,0 ArR=-42,10,16 FoR=-66,0,0 HaR=-14,0,0 ArL=-12,0,22 FoL=-36,0,0
+
+clip stance_fist dur=1 ease=linear
+  k 0.00 Ch=4,-8,0 Hp=0,-4,0 ArR=-46,-10,10 FoR=-118,0,0 ArL=-52,10,14 FoL=-112,0,0
+
+clip stance_spear dur=1 ease=linear
+  k 0.00 Ch=0,-14,0 Hp=0,-8,0 ArR=-40,16,12 FoR=-80,0,0 ArL=-52,-24,12 FoL=-72,0,0
+
+clip stance_staff dur=1 ease=linear
+  k 0.00 Ch=0,-6,0 Hp=0,-4,0 ArR=-48,-8,12 FoR=-96,0,0 ArL=-48,14,14 FoL=-90,0,0
+
+# ------------------------------------------------------------------ ENEMY-SPECIFIC
+clip bow_shoot dur=1.2 ease=out blend=0.06 out=0.18
+  k 0.00 Ch=0,-12,0 ArL=-60,10,10 FoL=-40,0,0 ArR=-30,0,16 FoR=-60,0,0
+  k 0.40 e=inout Ch=2,-70,0 Hp=0,-34,0 ArL=-88,6,4 FoL=-6,0,0 ArR=-76,-62,16 FoR=-132,0,0 HaR=0,0,0 ThR=-8,0,6 KnR=10,0,0 ThL=10,0,6 KnL=12,0,0 Pos=0,-0.05,0
+  k 0.70 e=smooth Ch=2,-70,0 Hp=0,-34,0 ArL=-88,6,4 FoL=-6,0,0 ArR=-76,-62,16 FoR=-132,0,0
+  k 0.78 e=out ArR=-60,-10,22 FoR=-60,0,0 Ch=0,-60,0
+  k 1.20 e=inout Ch=0,0,0 Hp=0,0,0 ArL=6,0,8 FoL=-14,0,0 ArR=6,0,8 FoR=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip golem_swipe dur=1.5 ease=out blend=0.08 out=0.2
+  k 0.00 Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+  k 0.62 e=inout Ch=-4,46,0 Hp=0,28,0 ArR=-70,76,34 FoR=-30,0,0 ArL=-20,30,40 FoL=-30,0,0 ThR=6,0,6 KnR=14,0,0 ThL=-12,0,6 KnL=10,0,0 Pos=0,-0.06,-0.05
+  k 0.86 e=out Ch=8,-58,0 Hp=3,-34,0 ArR=-84,-46,12 FoR=-8,0,0 ArL=-10,24,40 FoL=-30,0,0 ThR=-24,0,6 KnR=20,0,0 ThL=18,0,6 KnL=16,0,0 Pos=0,-0.1,0.12
+  k 1.1 e=smooth Ch=8,-58,0 Hp=3,-34,0 ArR=-84,-46,12
+  k 1.5 e=inout Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0
+
+clip golem_slam dur=2.0 ease=out blend=0.08 out=0.25
+  k 0.00 Ch=0,0,0 Hp=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0
+  k 0.95 e=inout Ch=-16,0,0 Hp=-6,0,0 Hd=-10,0,0 ArR=-172,14,22 FoR=-24,0,0 ArL=-172,-14,22 FoL=-24,0,0 ThR=10,0,8 KnR=12,0,0 ThL=-10,0,8 KnL=10,0,0 Pos=0,0.02,-0.08
+  k 1.15 e=out Ch=36,0,0 Hp=16,0,0 Hd=14,0,0 ArR=-56,0,12 FoR=-8,0,0 ArL=-56,0,12 FoL=-8,0,0 ThR=-30,0,8 KnR=30,0,0 ThL=14,0,8 KnL=28,0,0 Pos=0,-0.3,0.2
+  k 1.5 e=smooth Pos=0,-0.3,0.2
+  k 2.0 e=inout Ch=0,0,0 Hp=0,0,0 Hd=0,0,0 ArR=6,0,8 FoR=-14,0,0 ArL=6,0,8 FoL=-14,0,0 ThR=-2,0,2 KnR=4,0,0 ThL=-2,0,2 KnL=4,0,0 Pos=0,0,0

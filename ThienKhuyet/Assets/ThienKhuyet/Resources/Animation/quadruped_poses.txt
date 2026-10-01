@@ -1,0 +1,52 @@
+# Quadruped (wolf / boar) pose clips. Joints: Bd Sp Ch Nk Hd Jw T1 T2 T3 FuR FlR FpR FuL FlL FpL HuR HlR HpR HuL HlL HpL, plus Pos.
+# Spine chain: x>0 dips the front (nose down). Leg upper joints: x<0 swings forward. Jaw: x>0 opens. Tail: x>0 raises the tip.
+
+clip wolf_bite dur=0.8 ease=out blend=0.05 out=0.15
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 HuR=0,0,0 HuL=0,0,0
+  k 0.26 e=inout Sp=-8,0,0 Ch=-12,0,0 Nk=-26,0,0 Hd=-14,0,0 Jw=46,0,0 FuR=-18,0,0 FuL=-18,0,0 HuR=14,0,0 HuL=14,0,0 Pos=0,-0.05,-0.08
+  k 0.40 e=out Sp=6,0,0 Ch=14,0,0 Nk=24,0,0 Hd=8,0,0 Jw=2,0,0 FuR=-36,0,0 FuL=-36,0,0 FlR=22,0,0 FlL=22,0,0 HuR=-6,0,0 HuL=-6,0,0 Pos=0,-0.08,0.24
+  k 0.80 e=inout Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 FlR=0,0,0 FlL=0,0,0 HuR=0,0,0 HuL=0,0,0 Pos=0,0,0
+
+clip wolf_pounce dur=1.05 ease=out blend=0.06 out=0.18
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 HuR=0,0,0 HuL=0,0,0
+  k 0.38 e=inout Sp=10,0,0 Ch=8,0,0 Nk=22,0,0 Hd=6,0,0 Jw=10,0,0 FuR=16,0,0 FuL=16,0,0 FlR=44,0,0 FlL=44,0,0 HuR=-38,0,0 HuL=-38,0,0 HlR=60,0,0 HlL=60,0,0 T1=-10,0,0 Pos=0,-0.2,-0.1
+  k 0.5 e=out Sp=-12,0,0 Ch=-8,0,0 Nk=-8,0,0 Hd=-4,0,0 Jw=48,0,0 FuR=-74,0,0 FuL=-74,0,0 FlR=-10,0,0 FlL=-10,0,0 HuR=48,0,0 HuL=48,0,0 HlR=-10,0,0 HlL=-10,0,0 T1=14,0,0 Pos=0,0.14,0.28
+  k 0.72 e=smooth Sp=-6,0,0 Ch=-4,0,0 Jw=30,0,0 FuR=-50,0,0 FuL=-50,0,0 HuR=30,0,0 HuL=30,0,0 Pos=0,0.1,0.35
+  k 1.05 e=inout Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 FlR=0,0,0 FlL=0,0,0 HuR=0,0,0 HuL=0,0,0 HlR=0,0,0 HlL=0,0,0 T1=0,0,0 Pos=0,0,0
+
+clip wolf_howl dur=2.2 ease=inout blend=0.2 out=0.3
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0
+  k 0.5 Sp=-8,0,0 Ch=-14,0,0 Nk=-52,0,0 Hd=-34,0,0 Jw=36,0,0 FuR=10,0,0 FuL=10,0,0 T1=14,0,0 Pos=0,0.02,-0.04
+  k 1.6 Sp=-8,0,0 Ch=-14,0,0 Nk=-54,0,0 Hd=-36,0,0 Jw=40,0,0 FuR=10,0,0 FuL=10,0,0 T1=14,0,0 Pos=0,0.02,-0.04
+  k 2.2 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 T1=0,0,0 Pos=0,0,0
+
+clip hit_light dur=0.34 ease=out blend=0.03 out=0.12
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0
+  k 0.07 Sp=-4,6,0 Ch=-8,8,0 Nk=-16,10,0 Hd=-8,0,0 Jw=24,0,0 Pos=0,-0.02,-0.07
+  k 0.34 e=inout Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 Pos=0,0,0
+
+clip hit_heavy dur=0.9 ease=out blend=0.03 out=0.2
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0
+  k 0.14 Sp=-14,0,0 Ch=-18,0,0 Nk=-30,0,0 Hd=-14,0,0 Jw=34,0,0 FuR=-24,0,0 FuL=-24,0,0 HuR=18,0,0 HuL=18,0,0 Pos=0,-0.04,-0.18
+  k 0.5 e=smooth Sp=6,0,0 Ch=10,0,0 Nk=16,10,0 Hd=10,0,0 Jw=4,0,0 FuR=6,0,0 FuL=6,0,0 Pos=0,-0.1,-0.06
+  k 0.9 e=inout Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 HuR=0,0,0 HuL=0,0,0 Pos=0,0,0
+
+clip stagger dur=1.3 ease=out blend=0.04 out=0.25
+  k 0.00 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0
+  k 0.16 Sp=-16,0,0 Ch=-20,0,0 Nk=-34,0,0 Hd=-10,0,0 Jw=30,0,0 FuR=-28,0,0 FuL=-28,0,0 HuR=20,0,0 HuL=20,0,0 Pos=0,-0.06,-0.2
+  k 0.6 e=smooth Sp=10,0,0 Ch=18,0,0 Nk=34,0,0 Hd=14,0,0 Jw=6,0,0 FuR=14,0,0 FuL=14,0,0 FlR=30,0,0 FlL=30,0,0 HuR=-10,0,0 HuL=-10,0,0 Pos=0,-0.18,-0.04
+  k 1.3 e=inout Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0 Jw=0,0,0 FuR=0,0,0 FuL=0,0,0 FlR=0,0,0 FlL=0,0,0 HuR=0,0,0 HuL=0,0,0 Pos=0,0,0
+
+clip death dur=1.4 ease=out blend=0.05 hold=1
+  k 0.00 Bd=0,0,0 Sp=0,0,0 Ch=0,0,0 Nk=0,0,0 Hd=0,0,0
+  k 0.3 Sp=-12,0,0 Ch=-16,0,0 Nk=-26,0,0 Jw=30,0,0 FuR=-22,0,0 FuL=-22,0,0 HuR=16,0,0 HuL=16,0,0 Pos=0,-0.08,-0.14
+  k 0.9 e=in Bd=0,0,70 Sp=0,0,6 Ch=0,0,8 Nk=0,0,10 Jw=14,0,0 FuR=-30,0,10 FuL=-30,0,10 FlR=40,0,0 FlL=40,0,0 HuR=24,0,10 HuL=24,0,10 HlR=40,0,0 HlL=40,0,0 Pos=0,-0.36,0
+  k 1.4 e=out Bd=0,0,88 Sp=0,0,4 Ch=0,0,4 Nk=0,0,6 Jw=6,0,0 FuR=-36,0,12 FuL=-36,0,12 FlR=30,0,0 FlL=30,0,0 HuR=30,0,12 HuL=30,0,12 HlR=26,0,0 HlL=26,0,0 T1=0,0,0 Pos=0,-0.56,0
+
+clip alert dur=0.6 ease=out blend=0.15 out=0.2
+  k 0.00 Nk=0,0,0 Hd=0,0,0
+  k 0.3 Nk=-18,0,0 Hd=-8,0,0 Ch=-4,0,0
+  k 0.6 Nk=-18,0,0 Hd=-8,0,0 Ch=-4,0,0
+
+clip sleep dur=1.0 ease=out blend=0.4 out=0.4 hold=1
+  k 0.00 Pos=0,-0.32,0 Sp=6,0,0 Ch=12,0,0 Nk=28,0,0 Hd=14,0,0 FuR=-40,0,10 FuL=-40,0,10 FlR=70,0,0 FlL=70,0,0 HuR=-60,0,10 HuL=-60,0,10 HlR=80,0,0 HlL=80,0,0 T1=-30,40,0
